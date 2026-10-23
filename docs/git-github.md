@@ -4,7 +4,10 @@
 
 When using Git, here are some common guidelines. For all of these, the fictive example will use a ticket identifier of `TICKET-123` where the work is _"a new button under form X"_
 
-- **When opening up a new branch** and working on a ticket, use the ticket identifier as a prefix to the branch. For example, name your branch `TICKET-123_<some text>`. You can replace `<some text>` with a few word description of the ticket, or omit it completely.
+- **When opening up a new branch** and working on a ticket, use the ticket identifier as a prefix to the branch. For example, name your branch `TICKET-123_<some text>`. 
+1. Olin jossain näkeväni/kuulleeni ohjeen, että tiketin numeron ja kuvailun väliin tulisi kaksi __. Itselleni asialla ei ole väliä, mutta asiasta voisi kysyä, että onko näin ja onko sille jokin erityinen syy.
+2. branch-nimeämiskäytännöiksi voisi päättää käyttää ASCII-merkkejä: pieniä kirjaimia, numeroita, /, -, _ ja tarvittaessa . Tämä siksi, että jos/kun branchin nimeä käytetään devops-pipelineissa, niin noin vältytään yllättäviltä merkkimuunnoksilta
+You can replace `<some text>` with a few word description of the ticket, or omit it completely.
 - **When committing code**, write your commit message in the format `<descriptive tag>: <message>`. A non-exhaustive list of descriptive tags include `feat` (i.e. feature), `fix`, `test`, `WIP` (i.e. work-in-progress), `docs` (i.e. documentation), `debug`, and `style`. Defaulting to use `feat` is fine. The purpose is to make it easier to recognize what the changes in the commit is about, especially during PR reviews
 - **When opening up a new pull request (PR)**
   - Set the PR title to be of the form `<ticket identifier>:<descriptive title text>`. For example, `TICKET-123: Add a new button under form X`
@@ -14,3 +17,9 @@ When using Git, here are some common guidelines. For all of these, the fictive e
     - Have you updated the documentation if needed?
 
 ## GitHub settings
+
+### .gitconfig
+```
+[core]
+	autocrlf = false
+```
