@@ -30,7 +30,7 @@ As for the terminal, we recommend to use the [Windows Terminal](https://learn.mi
 
 ## OpenAI ChatGPT and Codex
 
-For our AI tools, we utilize the services provided by OpenAI, such as ChatGPT and Codex. You most likely have already read our [guide](https://eu.sharepoint.ent.cgi.com/sites/CL16586/Shared%20Documents/CGI%20devloper%20guides) on how to apply for these two softwares. If not, go to that page and do so. For brevity's sake, the reasoning and installation guide will be omitted from here.
+For our AI tools, we utilize the services provided by OpenAI, such as ChatGPT and Codex. You most likely have already read our [guide](https://eu.sharepoint.ent.cgi.com/sites/CL16586/Shared%20Documents/CGI%20developer%20guides) on how to apply for these two softwares. If not, go to that page and do so. For brevity's sake, the reasoning and installation guide will be omitted from here.
 
 ## Rancher Desktop or Docker Engine in WSL2
 
