@@ -1,0 +1,19 @@
+# Default code owners who will be automatically added as a reviewers when someone opens a pull request.
+# Add the Github usernames of the maintainers here.
+# An example of how it looks like is this:
+# * @dev1 @dev2 @dev3
+
+# No automatic code owner reviews for files Renovate can update.
+# These exclusions also apply to changes made by human contributors.
+package.json
+package-lock.json
+pom.xml
+Dockerfile
+docker-compose.yml
+.nvmrc
+**/.mvn/wrapper/maven-wrapper.properties
+mvnw
+mvnw.cmd
+/.github/workflows/*.yml
+/.github/workflows/*.yaml
+/renovate.json

@@ -15,10 +15,3 @@ When using Git, here are some common guidelines. For all of these, the fictive e
     - Have you updated the documentation if needed?
 
 ## GitHub settings
-
-### .gitconfig
-
-```
-[core]
- autocrlf = false
-```
