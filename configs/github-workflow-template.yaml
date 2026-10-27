@@ -1,0 +1,17 @@
+# Template only: add real CI jobs before copying to .github/workflows/ci.yaml.
+# Repositories without CI do not need a workflow to use a merge queue.
+# See the Git/GitHub documentation in the general-docs directory for more info
+name: Build and test
+
+on:
+  # Change main to the repository's default branch. Keep push if CI should
+  # also run after merging; pull_request and merge_group cover pre-merge CI.
+  push:
+    branches: [main]
+  pull_request:
+  merge_group:
+
+jobs:
+  # Add the repository's build, test, or other validation jobs here.
+  # An empty jobs section is a placeholder, not a runnable workflow.
+  # Required checks must report results on both pull_request and merge_group.

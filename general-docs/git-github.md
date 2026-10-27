@@ -13,5 +13,35 @@ When using Git, here are some common guidelines. For all of these, the fictive e
     - How have the changes been tested/verified? Locally or in a different environment?
     - Have you added/modified tests
     - Have you updated the documentation if needed?
+  - NOTE! For the description, generally we use a PR template, but not all repositories have that added to them yet. You can find the template in the `configs`-directory
 
 ## GitHub settings
+
+Seeing as there are more than a 100 repositories in the _Opetushallitus_ organization, keeping the repository settings similar makes maintaining them much easier. Below are images of settings that you need to apply for the repository.
+
+Setting in the **General** tab:
+
+![github-settings-pr](./images/github-settings-pr.png)
+
+Settings in the **Rulesets** tab:
+
+![github-settings-rulesets1](./images/github-settings-rulesets1.png)
+
+![github-settings-rulesets2](./images/github-settings-rulesets2.png)
+
+![github-settings-rulesets3](./images/github-settings-rulesets3.png)
+
+### GitHub Actions and merge queues
+
+All project repositories should require a merge queue for their target branch due to our usage of Renovate and their suggestions for it in their [best practices guides](https://docs.renovatebot.com/upgrade-best-practices/#use-github-pull-request-merge-queues).
+
+#### Repositories with CI
+
+Use [github-workflow-template.yaml](../configs/github-workflow-template.yaml) as a starting point:
+
+1. Add the repository's actual CI jobs. The template's empty `jobs` section must be filled before use.
+2. Adjust the `push` branch to match the repository's default branch (most likely `master` or `main`), or remove `push` if CI should only run before merging.
+3. Place the completed workflow in `.github/workflows/ci.yaml` in the target repository.
+4. Configure the checks that should block merging as required status checks in GitHub settings. Add them under the **Require status checks to pass** in the **Rulesets tab** (image shown above)
+
+Keep both `pull_request` and `merge_group` triggers in every workflow that supplies required checks. The first checks the PR; the second checks its changes together with the latest target branch and any PRs ahead of it in the queue. Required PR checks also apply to the merge queue, so missing results on `merge_group` can block merging. Ensure any job conditions allow required checks to report on both events.
