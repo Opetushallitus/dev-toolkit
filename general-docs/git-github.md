@@ -4,7 +4,8 @@
 
 When using Git, here are some common guidelines. For all of these, the fictive example will use a ticket identifier of `TICKET-123` where the work is _"a new button under form X"_
 
-- **When opening up a new branch** and working on a ticket, use the ticket identifier as a prefix to the branch. For example, name your branch `TICKET-123_<some text>`. You can replace `<some text>` with a few word description of the ticket, or omit it completely.
+- **When opening up a new branch** and working on a ticket, use the ticket identifier as a prefix to the branch. For example, name your branch `TICKET-123_<some_text_separated_by_one_underscore>`. You can replace `<some some_text_separated_by_one_underscore>` with a few word description of the ticket, or omit it completely. Separate each word with one underscore `_`.
+  - NOTE! If you've heard someone mention using two underscores `__` when naming your branches, this is only used when creating a special merge-branch during deployment stages in OVP. Documentation for that is found [here](https://github.com/Opetushallitus/dev-toolkit-private).
 - **When committing code**, write your commit message in the format `<descriptive tag>: <message>`. A non-exhaustive list of descriptive tags include `feat` (i.e. feature), `fix`, `test`, `WIP` (i.e. work-in-progress), `docs` (i.e. documentation), `debug`, and `style`. Defaulting to use `feat` is fine. The purpose is to make it easier to recognize what the changes in the commit is about, especially during PR reviews
 - **When opening up a new pull request (PR)**
   - Set the PR title to be of the form `<ticket identifier>:<descriptive title text>`. For example, `TICKET-123: Add a new button under form X`
@@ -14,3 +15,10 @@ When using Git, here are some common guidelines. For all of these, the fictive e
     - Have you updated the documentation if needed?
 
 ## GitHub settings
+
+### .gitconfig
+
+```
+[core]
+ autocrlf = false
+```

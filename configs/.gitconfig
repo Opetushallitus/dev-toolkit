@@ -1,0 +1,5 @@
+```
+# Path to this file is often ~/.config/git/config
+[core]
+  autocrlf = false
+```
