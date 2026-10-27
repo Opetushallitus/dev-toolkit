@@ -3,6 +3,9 @@
 For this project, we strive to use same/similar tools/softwares for each developer to facilitate smooth and ergonomic shared developer practices. Below is a list of common softwares used in this project
 
 - Windows Subsystem for Linux (WSL2) (Windows users only)
+- Node Version Manager (NVM)
+- SDKMan (managing SDKs for the Java Virtual Machine)
+- IntelliJ or Visual Studio Code (VSCode) (code editors)
 - OpenAI ChatGPT and Codex (AI tools)
 - Rancher Desktop (GUI for Docker) or Docker Engine in WSL2
 
@@ -16,7 +19,7 @@ If you are using a Windows machine, **it is highly recommended to use [WSL2](htt
 
 ### Reasoning
 
-The reasoning for why we strongly recommend using WSL2 are the following:
+The reasoning for why we **strongly recommend using WSL2** are the following:
 
 - Linux is Unix-based, while Windows is not. Every script that has been written throughout the many years at OPH have been written in Bash, which is supported by Unix-based systems. **Scripts written in Bash cannot be run directly on Windows systems**, hence it would require us to rewrite them all to support e.g. Powershell.
 - Other developers in this project use MacOS, which is also Unix-based. If the Windows users use WSL2, interoperability between Windows and MacOS developers is significantly better.
@@ -28,9 +31,62 @@ To install WSL2, go to [this page](https://learn.microsoft.com/en-us/windows/wsl
 
 As for the terminal, we recommend to use the [Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/install) application.
 
+## Node Version Manager (NVM)
+
+For handling different Node versions, we utilize [NVM](https://www.nvmnode.com/).
+
+### Reasoning
+
+The reasoning for using NVM is:
+
+- Well supported and used Node version manager
+- Several services use different Node versions
+- NVM is already used in many services
+
+### Installation
+
+To install NVM, open up your terminal and run the following command: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash`.
+
+## SDKMan (managing SDKs for the Java Virtual Machine)
+
+Across our services, different SDK versions for the JVM are used, at least for Java and Scala. Thus, we recommend using [SDKMAN!](https://sdkman.io/) to handle switching between the different versions seamlessly.
+
+### Reasoning
+
+The reasoning for using SDKMan is:
+
+- Having one way to manage the different SDK versions allows for automatic scripting for running services locally. For example, instead of trying to determine all the possible ways to manage different Java versions - such as using _update-java-alternatives_, _update-alternatives_, or _galternatives_ - we choose one way and use that. It makes maintainability much better
+- This has already been done in _Yleiskäyttöiset palvelut (YK)_. All the different services uses SDKMAN to select the correct Java version locally (at least for WSL2 users). An example can be found [here](https://github.com/Opetushallitus/organisaatio/blob/master/scripts/lib/common-functions.sh#L120-L165).
+
+### Installation
+
+To install SDKMAN, open up a terminal and run the following command: `curl -s "https://get.sdkman.io" | bash`
+
+## IntelliJ or Visual Studio Code (VSCode)
+
+For code editing, we recommend using either IntelliJ or VSCode (or both). If you want to use IntelliJ, follow the instructions [here](https://eu.sharepoint.ent.cgi.com/sites/CL16586/Shared%20Documents/CGI%20developer%20guides) on how to apply for the license for it.
+
+### Reasoning
+
+The reasons to use either of the code editors above are:
+
+- Common code editors with wide support
+- Used by most (if not all) developers in this project
+- IntelliJ has great built-in support for developing Java based code, and VSCode has excellent plugins for this as well
+
+### Installation
+
+For installing VSCode into WSL2, got to [this page](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode).
+
+For installing IntelliJ, follow the instructions that are sent to you via email after applying for the license.
+
 ## OpenAI ChatGPT and Codex
 
-For our AI tools, we utilize the services provided by OpenAI, such as ChatGPT and Codex. You most likely have already read our [guide](https://eu.sharepoint.ent.cgi.com/sites/CL16586/Shared%20Documents/CGI%20developer%20guides) on how to apply for these two softwares. If not, go to that page and do so. For brevity's sake, the reasoning and installation guide will be omitted from here.
+For our AI tools, we utilize the services provided by OpenAI, such as ChatGPT and Codex. You most likely have already read our [guide](https://eu.sharepoint.ent.cgi.com/sites/CL16586/Shared%20Documents/CGI%20developer%20guides) on how to apply for these two softwares. If not, go to that page and do so. For brevity's sake, the reasoning will be omitted from here.
+
+### Installation
+
+To install the Codex CLI to WSL2, run the following command: `npm install -g @openai/codex`. NOTE! This assumes you have installed Node/NPM using NVM as described above
 
 ## Rancher Desktop or Docker Engine in WSL2
 
