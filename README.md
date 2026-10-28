@@ -8,7 +8,7 @@ The purpose of this dev-toolkit is to
 
 ## Important links
 
-If you are a new developer, follow the guidelines found in the [new developer](./docs/new-developer.md) documentation.
+If you are a new developer, follow the guidelines found in the [new developer](./general-docs/new-developer.md) documentation.
 
 If you need to find internal CGI developer guides, go to [this page](https://eu.sharepoint.ent.cgi.com/sites/CL16586/Shared%20Documents/CGI%20developer%20guides).
 
