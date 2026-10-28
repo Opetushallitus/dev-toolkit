@@ -1,0 +1,19 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                              https://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <servers>
+        <server>
+            <!-- Must match the repository ID in your pom.xml -->
+            <id>github</id>
+
+            <!-- Your GitHub username -->
+            <username></username>
+
+            <!-- Personal Access Token (classic) with read:packages -->
+            <password></password>
+        </server>
+    </servers>
+
+</settings>

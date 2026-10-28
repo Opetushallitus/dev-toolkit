@@ -1,0 +1,2 @@
+export GITHUB_TOKEN="<add your github Personal Access Token (PAT) that has at least package.read permission>"
+export BROWSER="<path to your browser, WSL only. If you follow the instructions, the value should be $HOME/<browser>.exe>"

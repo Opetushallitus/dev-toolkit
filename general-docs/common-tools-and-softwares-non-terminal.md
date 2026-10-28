@@ -1,66 +1,14 @@
-# Common tools/softwares
+# Common tools/softwares - non-terminal
 
-For this project, we strive to use same/similar tools/softwares for each developer to facilitate smooth and ergonomic shared developer practices. Below is a list of common softwares used in this project
+For this project, we strive to use same/similar tools/softwares for each developer workstation (i.e. non-terminal things) to facilitate smooth and ergonomic shared developer practices. **We do not want to force anyone to use these softwares!** However, **it is highly recommend** to install and use these softwares. Installation steps and the reasoning for the choice of software in their respective use case is explained under the subheading for each software separately. For the terminal based ones, a similar document is found [here](./common-tools-and-softwares-terminal.md).
 
-- Windows Subsystem for Linux (WSL2) (Windows users only)
-- Node Version Manager (NVM)
-- SDKMan (managing SDKs for the Java Virtual Machine)
+Below is a list of common non-terminal softwares used in this project:
+
 - IntelliJ or Visual Studio Code (VSCode) (code editors)
 - OpenAI ChatGPT and Codex (AI tools)
 - Rancher Desktop (GUI for Docker) or Docker Engine in WSL2
 
-**We do not want to force anyone to use these softwares!** However, **it is highly recommend** to install and use these softwares if they fulfill a need of yours. Installation steps and the reasoning for the choice of software in their respective use case is explained under the subheading for each software separately.
-
 If you have opinions on other softwares that you strongly want to use that conflict with any listed here, you are encouraged to discuss it with your team leader!
-
-## Windows Subsystem for Linux (WSL2) (Windows users only)
-
-If you are using a Windows machine, **it is highly recommended to use [WSL2](https://learn.microsoft.com/en-us/windows/wsl/about).** WSL2 allows you to run a Linux environment on your Windows machine without the need for a separate virtual machine or dual booting.
-
-### Reasoning
-
-The reasoning for why we **strongly recommend using WSL2** are the following:
-
-- Linux is Unix-based, while Windows is not. Every script that has been written throughout the many years at OPH have been written in Bash, which is supported by Unix-based systems. **Scripts written in Bash cannot be run directly on Windows systems**, hence it would require us to rewrite them all to support e.g. Powershell.
-- Other developers in this project use MacOS, which is also Unix-based. If the Windows users use WSL2, interoperability between Windows and MacOS developers is significantly better.
-- Getting comfortable and efficient with using Unix-based systems is an important skill for a developer, as the vast majority of servers run on Linux. All of the servers in this project are run using Linux.
-
-### Installation
-
-To install WSL2, go to [this page](https://learn.microsoft.com/en-us/windows/wsl/install) and follow the instructions. We recommend installing the default Ubuntu distribution.
-
-As for the terminal, we recommend to use the [Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/install) application.
-
-## Node Version Manager (NVM)
-
-For handling different Node versions, we utilize [NVM](https://www.nvmnode.com/).
-
-### Reasoning
-
-The reasoning for using NVM is:
-
-- Well supported and used Node version manager
-- Several services use different Node versions
-- NVM is already used in many services
-
-### Installation
-
-To install NVM, open up your terminal and run the following command: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash`.
-
-## SDKMan (managing SDKs for the Java Virtual Machine)
-
-Across our services, different SDK versions for the JVM are used, at least for Java and Scala. Thus, we recommend using [SDKMAN!](https://sdkman.io/) to handle switching between the different versions seamlessly.
-
-### Reasoning
-
-The reasoning for using SDKMan is:
-
-- Having one way to manage the different SDK versions allows for automatic scripting for running services locally. For example, instead of trying to determine all the possible ways to manage different Java versions - such as using _update-java-alternatives_, _update-alternatives_, or _galternatives_ - we choose one way and use that. It makes maintainability much better
-- This has already been done in _Yleiskäyttöiset palvelut (YK)_. All the different services uses SDKMAN to select the correct Java version locally (at least for WSL2 users). An example can be found [here](https://github.com/Opetushallitus/organisaatio/blob/master/scripts/lib/common-functions.sh#L120-L165).
-
-### Installation
-
-To install SDKMAN, open up a terminal and run the following command: `curl -s "https://get.sdkman.io" | bash`
 
 ## IntelliJ or Visual Studio Code (VSCode)
 
