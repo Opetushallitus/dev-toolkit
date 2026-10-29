@@ -1,3 +1,22 @@
 # Configs
 
-The purpose of this directory, is to keep and maintain configuration files across the various services / repositories. These configuration files are intended to work as broader outlines commonly used everywhere, but they can be modified per service / environment as needed. Examples include formatting like `.prettierrc`, `.eslintrc`, Git/Github like `renovate.json`, and development environment like `.tmux.conf`.
+Shared configuration files and templates for OPH services and repositories. Use these files as starting points and adapt them to each project's requirements.
+
+## Maintainer
+
+*All developers*.
+
+## Getting started
+
+No application setup or running services are required to use these files. Copy the relevant file into your project and follow that project's setup and validation instructions.
+
+Available configuration files and templates:
+
+- [README template](./README_TEMPLATE.md)
+- [Pull request template](./PULL_REQUEST_TEMPLATE.md)
+- [CODEOWNERS template](./CODEOWNERS)
+- [GitHub workflow template](./github-workflow-template.yaml)
+- [Renovate configuration](./renovate.json)
+- [Maven settings](./maven-settings.xml)
+
+For general onboarding, see the [new developer guide](../general-docs/new-developer.md).
