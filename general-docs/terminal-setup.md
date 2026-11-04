@@ -1,13 +1,12 @@
-# Common tools/softwares - terminal
+# Terminal setup
 
-For this project, we strive to use same/similar tools/softwares for each developer's terminal to facilitate smooth and ergonomic shared developer practices. **We do not want to force anyone to use these softwares!** However, **it is highly recommend** to install and use these softwares. This document is divided into an installation part and a reasoning part. In the former, the installation steps here are divided into three main steps. First, installing WSL2 itself (Windows users only, MacOS users can skip this), then installing the rest of the tools/softwares, and lastly finalizing your terminal environment. In the latter part, the reasoning for the choice of software is explained. For the non-terminal based ones, a similar document is found [here](./common-tools-and-softwares-non-terminal.md).
+For this project, we strive to use same/similar tools/softwares for each developer's terminal to facilitate smooth and ergonomic shared developer practices. **We do not want to force anyone to use these softwares!** However, **it is highly recommend** to install and use these softwares. This document is divided into an installation part and a reasoning part. For non-terminal tools, follow the [non-terminal software setup](./non-terminal-softwares-setup.md) guide.
 
-Below is a list of common terminal-based softwares used in this project:
+In short, the installation steps are the following:
 
-- Windows Subsystem for Linux (WSL2) (Windows users only)
-- Node Version Manager (NVM)
-- SDKMAN (managing SDKs for the Java Virtual Machine)
-  - Java and Maven will be installed as well in this step to get started
+1. Install WSL2 (Windows users only)
+2. Installing tools/softwares
+3. Configurations
 
 If you have opinions on other softwares that you strongly want to use that conflict with any listed here, you are encouraged to discuss it with your team leader!
 
@@ -19,7 +18,7 @@ Before installing any other tools/softwares in this document, begin by installin
 
 As for the terminal, we recommend to use the [Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/install) application.
 
-### Step 2: Installing the rest of the tools/softwares
+### Step 2: Installing tools/softwares
 
 #### Node Version Manager (NVM)
 
@@ -33,7 +32,7 @@ Amazon Corretto JDK: `sdk install java 21.0.12-amzn`.
 
 Maven `sdk install maven 3.9.10`.
 
-### Step 3: Finalizing your terminal environment
+### Step 3: Configurations
 
 #### GitHub Personal Access Token (PAT) (classic)
 
@@ -60,6 +59,10 @@ First, copy the contents of the `maven-settings.xml`-file found in the `configs`
 #### Npm settings
 
 First, copy the contents of the `.npmrc`-file found in the `configs`-directory in this repository. Then, open up the file located in `~/.npmrc` with your preferred editor. If the file doesn't exist, create it. Paste the content you copied earlier. Add your PAT to the correct field.
+
+#### Codex settings
+
+Assuming you have the Codex CLI installed, copy the contents of the `codex-config.toml` in the `configs`-directory in this repository. Then, open up the file located in `~/.codex/config.toml` with your preferred editor. If the file doesn't exist, create it. Paste the content you copied earlier to the top of the file.
 
 ## Reasoning
 
