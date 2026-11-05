@@ -4,12 +4,16 @@ default_permissions = "safe-workspace"
 [permissions.safe-workspace]
 extends = ":workspace"
 
+[permissions.safe-workspace.network]
+enabled = true
+
 [permissions.safe-workspace.filesystem]
 # Required on Linux/WSL for unbounded ** deny globs. Not needed for MacOS users
 glob_scan_max_depth = 5
 
 [permissions.safe-workspace.filesystem.":workspace_roots"]
 "." = "write"
+# change these ignores based on your project
 "**/*.env" = "deny"
 "**/.env*" = "deny"   # Covers .env, .env.local, etc.
 "**/*.pem" = "deny"
